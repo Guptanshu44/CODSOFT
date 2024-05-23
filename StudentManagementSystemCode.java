@@ -67,7 +67,6 @@ class StudentManagementSystem {
         }
     }
 
-    @SuppressWarnings("unchecked")
     public void loadFromFile() {
         try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
             students = (List<Student>) inputStream.readObject();
