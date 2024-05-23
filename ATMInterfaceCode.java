@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-// BankAccount class to represent the user's bank account
 class BankAccount {
     private double balance;
 
@@ -25,7 +24,6 @@ class BankAccount {
     }
 }
 
-// ATM class to represent the ATM machine
 public class ATM {
     private BankAccount account;
     private Scanner scanner;
@@ -35,7 +33,6 @@ public class ATM {
         this.scanner = new Scanner(System.in);
     }
 
-    // Method to display the ATM interface and handle user input
     public void run() {
         boolean running = true;
         while (running) {
@@ -66,13 +63,11 @@ public class ATM {
             }
         }
     }
-
-    // Method to display account balance
+    
     private void checkBalance() {
         System.out.println("Your current balance is: $" + account.getBalance());
     }
 
-    // Method to deposit money into the account
     private void deposit() {
         System.out.print("Enter deposit amount: $");
         double amount = scanner.nextDouble();
@@ -80,7 +75,6 @@ public class ATM {
         System.out.println("Deposit successful. Your new balance is: $" + account.getBalance());
     }
 
-    // Method to withdraw money from the account
     private void withdraw() {
         System.out.print("Enter withdrawal amount: $");
         double amount = scanner.nextDouble();
@@ -92,7 +86,7 @@ public class ATM {
     }
 
     public static void main(String[] args) {
-        BankAccount account = new BankAccount(1000); // Initial balance of $1000
+        BankAccount account = new BankAccount(1000);
         ATM atm = new ATM(account);
         atm.run();
     }
